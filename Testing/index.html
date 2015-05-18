@@ -3,17 +3,19 @@
   <head>
   </head>
   <body>
-    <div>This is version 3.0</div>
+    <div>This is version 4.0</div>
     <div id="jsTest1" class="d">Javascript is: Not working.</div>
     <div id="jsTest2" class="d">JQuery is: Not Loaded.</div>
     <input id="ajaxLoad" style="float:left"></input>
     <button id="loadButton">Load Async</button>
+    <button id="StageTest">Click to Test</button>
     <p></p>
     <div id="stage"></div>
     <div id="errs">Errors:</div>
     <button id="ClearErrors">Clear Errors</button>
   </body>
   <script>
+      var nextStage = 1;
       try
       {
           var jst = document.getElementById("jsTest1");
@@ -22,6 +24,23 @@
       catch(err)
       {
           document.getElementById("errs").innerHTML += err.message;
+      }
+      
+      function bindStageTest()
+      {
+        $('#stageTest').on('click', stageTest(nextStage++));
+      }
+      
+      function stageTest(stage)
+      {
+        if(stage == 1){ stage1(); }
+        if(stage == 2){ stage2(); }
+        if(stage == 3){ stage3(); }
+        if(stage == 4){ stage4(); }
+        if(stage == 5){ stage5(); }
+        if(stage == 6){ stage6(); }
+        if(stage == 7){ stage7(); }
+        if(stage == 8){ stage8(); }
       }
       
       function loadAsync (link)
@@ -101,14 +120,7 @@
                       $('#jsTest2').html($('#jsTest2').html().replace('Not', 'Is'));
                       bindAsyncLoad();
                       $('#ClearErrors').on('click', function(){ document.getElementById("errs").innerHTML = ''});
-                      stage1();
-                      stage3();
-                      stage2();
-                      stage4();
-                      stage5();
-                      stage6();
-                      stage7();
-                      stage8();
+                      bindStageTest();
                   }
                   catch(err)
                   {
