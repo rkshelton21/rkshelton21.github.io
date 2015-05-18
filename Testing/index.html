@@ -39,6 +39,28 @@
               });
       };
       
+      function loadSync (link)
+      {
+          if(link !== '')
+          {
+            $.ajax({
+              url: link,
+              dataType: "script",
+              success: function( script, textStatus ) 
+                {
+                    var newDiv = '<div class="d">TEMP: Loaded</div>';
+                    newDiv = newDiv.replace('TEMP', link);
+                    $('#ajaxLoad').val('');
+                    $('.d').last().append(newDiv);
+                },
+              error: function( jqxhr, settings, exception ) 
+                {
+                    document.getElementById("errs").innerHTML += "<p>" + "Triggered ajaxError handler: " + exception + "</p>";
+                }
+            });
+          }
+      };
+      
       try
       {
           function bindAsyncLoad ()
@@ -102,7 +124,7 @@
       
       function stage1()
       {
-          loadAsync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js.gz?v=10');
+          loadSync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js.gz?v=10');
           $('#stage').html($('#stage').html() + '<p>Stage 1 Complete</p>');
       }
       function stage2()
@@ -117,27 +139,27 @@
       }
       function stage4()
       {
-        loadAsync("http://asset03.drivewebsite.com/Global/Scripts/loadr.js?v=10");
+        loadSync("http://asset03.drivewebsite.com/Global/Scripts/loadr.js?v=10");
         $('#stage').html($('#stage').html() + '<p>Stage 4 Complete</p>');
       }
       function stage5()
       {
-        loadAsync("http://asset03.drivewebsite.com/Site/3901b2b4-2cad-4c81-84b7-b068ae4ceb48/js/SiteScripts.js");
+        loadSync("http://asset03.drivewebsite.com/Site/3901b2b4-2cad-4c81-84b7-b068ae4ceb48/js/SiteScripts.js");
         $('#stage').html($('#stage').html() + '<p>Stage 5 Complete</p>');
       }
       function stage6()
       {
-        loadAsync('http://asset02.drivewebsite.com/prod-web/Scripts/libs/jquery/plugins/jquery.flexslider-min.js?v=1');
+        loadSync('http://asset02.drivewebsite.com/prod-web/Scripts/libs/jquery/plugins/jquery.flexslider-min.js?v=1');
         $('#stage').html($('#stage').html() + '<p>Stage 6 Complete</p>');
       }
       function stage7()
       {
-        loadAsync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/search.js?v=10');
+        loadSync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/search.js?v=10');
         $('#stage').html($('#stage').html() + '<p>Stage 7 Complete</p>');
       }
       function stage8()
       {
-        loadAsync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/searchDropdowns.js?v=10');
+        loadSync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/searchDropdowns.js?v=10');
         $('#stage').html($('#stage').html() + '<p>Stage 8 Complete</p>');
       }
     </script>
