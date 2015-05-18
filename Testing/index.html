@@ -100,42 +100,42 @@
           document.getElementById("errs").innerHTML += err.message;
       }
       
-      function stage1 = function()
+      function stage1()
       {
           loadAsync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js.gz?v=10');
           $('#stage').html($('#stage').html() + '<p>Stage 1 Complete</p>');
       }
-      function stage2 = function()
+      function stage2()
       {
           LoadDDSGlobals();
           $('#stage').html($('#stage').html() + '<p>Stage 2 Complete</p>');
       }
-      function stage3 = function()
+      function stage3()
       {
         try{var ddsVars={platformId:"AWP",trackingLink:"https://localhost:1190/Cms/EventTracking/TrackEvent",page:{id:"70d39881-c79a-440c-a31b-c8f7c19dcdfe",name:"Home",notes:"Homepage",title:"Dominion Dealer Solutions | Any City, Any State"},site:{id:"3901b2b4-2cad-4c81-84b7-b068ae4ceb48",name:"Nissan Demo",url:"http://nissandemo.stage.drivewebsite.com",tags:""},search:{body:"",engine:"",make:"",model:"",stockType:"",trim:"",year:""},vehicle:{body:"",comment:"",dealer:{city:"",name:"",state:""},engine:"",make:"",model:"",stockNumber:"",stockType:"",trim:"",vin:"",year:""},data:{omnSuiteIdSite:"@Data.omnSuiteidsite",install:{dataium:"@Data.InstallDataiumCode",enquireJs:"@Data.InstallEnquireJS"},googleAnalyticsAccount:"@Data.googleAnalyticsAccount",dealer:{name:"Dominion Dealer Solutions",city:"Any City",state:"Any State",zip:"00000"},tms:{dealerCode:"@Data.toyotaDealerCode",regionCode:"@Data.toyotaRegionCode",districtCode:"@Data.toyotaDistrictCode",tda:"@Data.toyotaTDA"},sms:{dealerCode:"@Data.scionDealerCode",regionCode:"@Data.scionRegionCode",districtCode:"@Data.scionDistrictCode"}}};if("".indexOf("@")==-1){ddsVars.vehicle={body:"",comment:"",dealer:{city:"",name:"",state:""},engine:"",make:"",model:"",stockNumber:"",stockType:"",trim:"",vin:"",year:""}}}catch(err){var ddsVars={}}
         $('#stage').html($('#stage').html() + '<p>Stage 3 Complete</p>');
       }
-      function stage4 = function()
+      function stage4()
       {
         loadAsync("http://asset03.drivewebsite.com/Global/Scripts/loadr.js?v=10");
         $('#stage').html($('#stage').html() + '<p>Stage 4 Complete</p>');
       }
-      function stage5 = function()
+      function stage5()
       {
         loadAsync("http://asset03.drivewebsite.com/Site/3901b2b4-2cad-4c81-84b7-b068ae4ceb48/js/SiteScripts.js");
         $('#stage').html($('#stage').html() + '<p>Stage 5 Complete</p>');
       }
-      function stage6 = function()
+      function stage6()
       {
         loadAsync('http://asset02.drivewebsite.com/prod-web/Scripts/libs/jquery/plugins/jquery.flexslider-min.js?v=1');
         $('#stage').html($('#stage').html() + '<p>Stage 6 Complete</p>');
       }
-      function stage7 = function()
+      function stage7()
       {
         loadAsync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/search.js?v=10');
         $('#stage').html($('#stage').html() + '<p>Stage 7 Complete</p>');
       }
-      function stage8 = function()
+      function stage8()
       {
         loadAsync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/searchDropdowns.js?v=10');
         $('#stage').html($('#stage').html() + '<p>Stage 8 Complete</p>');
