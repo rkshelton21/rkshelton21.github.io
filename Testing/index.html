@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
+  </head>
+  <body>
+    <div id="jsTest1" class="d">Javascript is: Not working.</div>
+    <div id="jsTest2" class="d">JQuery is: Not Loaded.</div>
+    <input id="ajaxLoad" style="float:left"></input>
+    <button id="loadButton">Load Async</button>
+    <p></p>
+    <div id="errs">Errors:</div>
+    <button id="ClearErrors">Clear Errors</button>
+  </body>
+  <script>
       try
       {
           var jst = document.getElementById("jsTest1");
@@ -82,14 +92,4 @@
       }
 
     </script>
-  </head>
-  <body>
-    <div id="jsTest1" class="d">Javascript is: Not working.</div>
-    <div id="jsTest2" class="d">JQuery is: Not Loaded.</div>
-    <input id="ajaxLoad" style="float:left"></input>
-    <button id="loadButton">Load Async</button>
-    <p></p>
-    <div id="errs">Errors:</div>
-    <button id="ClearErrors">Clear Errors</button>
-  </body>
 </html>
