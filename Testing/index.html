@@ -3,9 +3,9 @@
   <head>
   </head>
   <body>
-    <div>This is version 4.8</div>
+    <div>This is version 5.0</div>
     <div id="jsTest1" class="d">Javascript is: Not working.</div>
-    <div id="jsTest2" class="d">JQuery is: Not Loaded.</div>
+    <div id="jsTest2" class="d">Combiner is: Not Loaded.</div>
     <input id="ajaxLoad" style="float:left"></input>
     <button id="loadButton">Load Async</button>
     <button id="stageTest">Click to Test</button>
@@ -104,7 +104,7 @@
           (function() {
               // Load the script
               var script = document.createElement("SCRIPT");
-              script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+              script.src = 'http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js.gz?v=10';
               script.type = 'text/javascript';
               document.getElementsByTagName("head")[0].appendChild(script);
           
@@ -142,7 +142,7 @@
       
       function stage1()
       {
-          loadSync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js.gz?v=10');
+          //loadSync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js.gz?v=10');
           $('#stage').html($('#stage').html() + '<p>Stage 1 Complete</p>');
       }
       function stage2()
