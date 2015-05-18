@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    <div>This is version 4.1</div>
+    <div>This is version 4.2</div>
     <div id="jsTest1" class="d">Javascript is: Not working.</div>
     <div id="jsTest2" class="d">JQuery is: Not Loaded.</div>
     <input id="ajaxLoad" style="float:left"></input>
@@ -15,7 +15,7 @@
     <button id="ClearErrors">Clear Errors</button>
   </body>
   <script>
-      var nextStage = 0;
+      var nextStage = 1;
       try
       {
           var jst = document.getElementById("jsTest1");
@@ -31,9 +31,9 @@
         $('#stageTest').on('click', stageTest);
       }
       
-      function stageTest(stage)
+      function stageTest()
       {
-        nextStage++;
+        var stage = nextStage++;
         if(stage == 1){ stage1(); }
         if(stage == 2){ stage2(); }
         if(stage == 3){ stage3(); }
