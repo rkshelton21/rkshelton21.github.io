@@ -9,7 +9,7 @@
     <script>$(document).ready(function(){bindStageTest();});</script>
   </head>
   <body>
-    <div>This is version 8.1</div>
+    <div>This is version 9.0</div>
     <div id="jsTest1" class="d">Javascript is: Not working.</div>
     <input id="ajaxLoad" style="float:left"></input>
     <button id="loadButton">Load Async</button>
@@ -143,13 +143,7 @@
       }
       function stage9()
       {
-        loadSync('http://http://rogerdev.com/Testing/test.js');
-        $('#stage').html($('#stage').html() + '<p>Stage 9 Complete</p>');
-      }
-      function stage10()
-      {
-        loadSync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js?v=10');
-        $('#stage').html($('#stage').html() + '<p>Stage 10 Complete</p>');
+        $('#stage').html($('#stage').html() + '<p>Done!</p>');
       }
     </script>
 </html>
