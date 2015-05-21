@@ -43,6 +43,7 @@
         if(stage == 6){ stage6(); }
         if(stage == 7){ stage7(); }
         if(stage == 8){ stage8(); }
+        if(stage == 9){ stage9(); }
       }
       
       function loadAsync ()
@@ -138,6 +139,16 @@
       {
         loadSync('http://asset04.drivewebsite.com/prod-web/Scripts/Inventory/searchDropdowns.js?v=10');
         $('#stage').html($('#stage').html() + '<p>Stage 8 Complete</p>');
+      }
+      function stage9()
+      {
+        loadSync('http://http://rogerdev.com/Testing/test.js');
+        $('#stage').html($('#stage').html() + '<p>Stage 9 Complete</p>');
+      }
+      function stage10()
+      {
+        loadSync('http://asset01.drivewebsite.com/prod-web/Shared/CombinerOutput_JS.js?v=10');
+        $('#stage').html($('#stage').html() + '<p>Stage 10 Complete</p>');
       }
     </script>
 </html>
