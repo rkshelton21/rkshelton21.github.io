@@ -13026,6 +13026,62 @@ var ddsGlobal = {
 
 }).call(this);
 
+// FILE HEADER: C:\Users\harold.hockett\Documents\Visual Studio 2010\Projects\Hammerhead\DDS.Web\Dominion.Cms.CustomerSites\amazonReferences\Global\js\storage.js 
+/*
+handles all of our local storage setup
+creates a generic storage object, which abstracts it from the underlying library (currently store.min.js)
+*/
+
+
+// Define a class like this
+function Storage() {
+
+}
+
+
+
+Storage.prototype.setValue = function(key, value) {
+    try { store.set(key, value); }
+    catch(err){}
+};
+
+Storage.prototype.getValue = function(key) {
+    try { return store.get(key); }
+    catch(err){}
+};
+
+Storage.prototype.clearKey = function(key) {
+    try { store.set(key, ""); }
+    catch(err){}          
+};
+
+Storage.prototype.clear = function() {
+    try { store.clear(); }
+    catch(err){}
+};
+
+Storage.prototype.removeKey = function(key) {
+    try { store.remove(key); }
+    catch(err){}
+};
+
+ 
+// FILE HEADER: C:\Users\harold.hockett\Documents\Visual Studio 2010\Projects\Hammerhead\DDS.Web\Dominion.Cms.CustomerSites\amazonReferences\Global\js\store.min.js 
+/* Copyright (c) 2010-2011 Marcus Westin */
+var store = function () {
+    var b = {}, e = window, g = e.document, c; b.disabled = false; b.set = function () { }; b.get = function () { }; b.remove = function () { }; b.clear = function () { }; b.transact = function (a, d) { var f = b.get(a); if (typeof f == "undefined") f = {}; d(f); b.set(a, f) }; b.serialize = function (a) { return JSON.stringify(a) }; b.deserialize = function (a) { if (typeof a == "string") return JSON.parse(a) }; var h; try { h = "localStorage" in e && e.localStorage } catch (k) { h = false } if (h) {
+        c = e.localStorage; b.set = function (a, d) { c.setItem(a, b.serialize(d)) }; b.get =
+function (a) { return b.deserialize(c.getItem(a)) }; b.remove = function (a) { c.removeItem(a) }; b.clear = function () { c.clear() } 
+    } else {
+        var i; try { i = "globalStorage" in e && e.globalStorage && e.globalStorage[e.location.hostname] } catch (l) { i = false } if (i) { c = e.globalStorage[e.location.hostname]; b.set = function (a, d) { c[a] = b.serialize(d) }; b.get = function (a) { return b.deserialize(c[a] && c[a].value) }; b.remove = function (a) { delete c[a] }; b.clear = function () { for (var a in c) delete c[a] } } else if (g.documentElement.addBehavior) {
+            c = g.createElement("div");
+            e = function (a) { return function () { var d = Array.prototype.slice.call(arguments, 0); d.unshift(c); g.body.appendChild(c); c.addBehavior("#default#userData"); c.load("localStorage"); d = a.apply(b, d); g.body.removeChild(c); return d } }; b.set = e(function (a, d, f) { a.setAttribute(d, b.serialize(f)); a.save("localStorage") }); b.get = e(function (a, d) { return b.deserialize(a.getAttribute(d)) }); b.remove = e(function (a, d) { a.removeAttribute(d); a.save("localStorage") }); b.clear = e(function (a) {
+                var d = a.XMLDocument.documentElement.attributes;
+                a.load("localStorage"); for (var f = 0, j; j = d[f]; f++) a.removeAttribute(j.name); a.save("localStorage")
+            })
+        } 
+    } try { b.set("__storejs__", "__storejs__"); if (b.get("__storejs__") != "__storejs__") b.disabled = true; b.remove("__storejs__") } catch (m) { b.disabled = true } return b
+} ();
 // FILE HEADER: C:\Users\harold.hockett\Documents\Visual Studio 2010\Projects\Hammerhead\DDS.Web\Dominion.Cms.CustomerSites\amazonReferences\Global\js\Dominion.Analytics.min.js 
 /*
 ** Dominion.Analytics.min.js
