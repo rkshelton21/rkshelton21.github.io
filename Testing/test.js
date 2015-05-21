@@ -13863,7 +13863,7 @@ dds.web.AjaxResponse.Denied = 2;
 dds.web.AjaxResponse.Error = 3;
 dds.web.AjaxResponse.Failure = 4;
 // FILE HEADER: C:\Users\harold.hockett\Documents\Visual Studio 2010\Projects\Hammerhead\DDS.Web\Dominion.Cms.CustomerSites\amazonReferences\Global\Scripts\Mask\dds.web.Mask.js  
-ï»¿var dds = dds || {};
+var dds = dds || {};
 dds.web = dds.web || {};
 dds.web.Mask = dds.web.Mask || {};
 
